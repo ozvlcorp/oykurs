@@ -9,13 +9,11 @@ window.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
   if(ring){ring.style.left=rx+'px';ring.style.top=ry+'px';}
   requestAnimationFrame(tick);
 })();
-
 // Scroll reveal
 const ro = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);} });
 }, {threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-
 // Client images
 const clientImages = [
   { src: 'clients/logo-1.png',  alt: 'Pepito' },
@@ -50,7 +48,6 @@ if(grid && clientImages.length){
     d.appendChild(img); grid.appendChild(d);
   });
 }
-
 // GA4 Event Tracking for CTA buttons
 document.querySelectorAll('.btn-magic, .btn-buy, .nav-pill').forEach(btn => {
   btn.addEventListener('click', function() {
@@ -66,4 +63,3 @@ document.querySelectorAll('.btn-magic, .btn-buy, .nav-pill').forEach(btn => {
     }
   });
 });
-</script>
